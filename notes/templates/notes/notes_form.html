@@ -4,14 +4,16 @@
 
     <form method="POST"> {% comment %}cross site request forgery{% endcomment %}{% csrf_token %} 
 
-    {{form}}
+    {{form.as_p}}
     <button type="submit"class="btn btn-primary my-5">Submit</button>
+    
     </form>
+
     {% if form.errors %}
     <div class="alert alert-danger my-5">
     {{form.errors.title_Name.as_text}}
     </div>
     {% endif %}
-
+    <a href="{% url 'notes.list' %}" class="btn btn-secondary my-5">cancel</a>
     
     {% endblock %}
