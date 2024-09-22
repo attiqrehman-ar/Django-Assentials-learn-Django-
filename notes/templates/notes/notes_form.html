@@ -2,7 +2,7 @@
 
     {% block content %}
 
-    <form action="{% url 'notes.new' %}" method="POST"> {% comment %}cross site request forgery{% endcomment %}{% csrf_token %} 
+    <form method="POST"> {% comment %}cross site request forgery{% endcomment %}{% csrf_token %} 
 
     {{form}}
     <button type="submit"class="btn btn-primary my-5">Submit</button>
@@ -13,4 +13,5 @@
     </div>
     {% endif %}
 
+    
     {% endblock %}
